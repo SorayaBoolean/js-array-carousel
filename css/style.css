@@ -19,7 +19,12 @@
 .item {
     width: 50vw;
     height: 50vh;
+    display: none;
 }
+
+.item.show {
+    display: block;
+} 
 
 .img-carousel {
     width: 100%;
