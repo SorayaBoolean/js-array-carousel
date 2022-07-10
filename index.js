@@ -24,7 +24,7 @@ console.log(itemList)
  
 itemList [slideAttiva].classList.add('show');
 
-//aggiungo event listner per div next
+//aggiungo event listner per div next and previous
 
 const next = document.querySelector ('.next');
 const previous = document.querySelector ('.previous');
@@ -41,8 +41,6 @@ next.addEventListener ('click',
             next.classList.add ('hidden')
         }
     }
-
-    
 )
 
 previous.addEventListener ('click',
@@ -51,5 +49,9 @@ previous.addEventListener ('click',
         slideAttiva-- ;
         itemList [slideAttiva].classList.add('show');
 
+        next.classList.remove ('hidden') ;
+        if (slideAttiva == 0) {
+            previous.classList.add ('hidden')
+        }
     }
 )
