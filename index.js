@@ -1,9 +1,10 @@
 const imgArray = [
-    "img/01.jpg", 
-    "img/02.jpg", 
-    "img/03.jpg", 
-    "img/04.jpg"
-]
+    "01.jpg", 
+    "02.jpg", 
+    "03.jpg", 
+    "04.jpg",
+    "05.jpg",
+];
 
 let slideAttiva = 0;
 //riproduco l' array di immagini attraverso javascript //
@@ -25,7 +26,8 @@ itemList [slideAttiva].classList.add('show');
 
 //aggiungo event listner per div next
 
-const next = document.querySelector ('.next')
+const next = document.querySelector ('.next');
+const previous = document.querySelector ('.previous');
 
 next.addEventListener ('click',
     function () {
@@ -33,10 +35,15 @@ next.addEventListener ('click',
         slideAttiva++ ;
         itemList [slideAttiva].classList.add('show');
 
-    }
-)
+        previous.classList.remove ('hidden')
 
-const previous = document.querySelector ('.previous')
+        if (slideAttiva== itemList.length - 1) {
+            next.classList.add ('hidden')
+        }
+    }
+
+    
+)
 
 previous.addEventListener ('click',
     function () {
